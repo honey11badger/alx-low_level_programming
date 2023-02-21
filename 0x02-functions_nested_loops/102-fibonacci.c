@@ -1,30 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - prints all numbers
- * Return: always (success)
+ * main - prints first 52 fibonacci values
+ * Return: Nothing
  */
 
-int main() {
-    int i, n = 50;
-    int fib[n];
+int main(void)
+{
+int i = 0;
+long j = 1, k = 2;
 
-    // Initialize the first two Fibonacci numbers
-    fib[0] = 1;
-    fib[1] = 2;
-
-    // Calculate and store the remaining Fibonacci numbers
-    for (i = 2; i < n; i++) {
-        fib[i] = fib[i-1] + fib[i-2];
+while (i < 50)
+{
+    if (i == 0)
+    {
+    printf("%ld", j);
     }
-
-    // Print the Fibonacci numbers separated by comma and space
-    for (i = 0; i < n-1; i++) {
-        printf("%d, ", fib[i]);
+    else
+    {
+        k += j;
+        j = k - j;
+        printf(",%ld", k);
     }
-
-    // Print the last Fibonacci number followed by a new line
-    printf("%d\n", fib[n-1]);
-
-    return (0);
+    ++i;
+}
+printf("\n");
+return (0);
 }
